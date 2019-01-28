@@ -5,10 +5,6 @@ import Product from './Product';
 import { ProductConsumer } from './context';
 
 class ProductList extends Component {
-  state = {
-    products: []
-  }
-
   render() { 
     return ( 
       <Fragment>
@@ -18,7 +14,9 @@ class ProductList extends Component {
             <div className="row">
               <ProductConsumer>
                 {(value) => {
-                  return <h1>{value}</h1>
+                  return value.products.map(product => {
+                    return <Product key={product.id} product={product} />
+                  })
                 }}
               </ProductConsumer>
             </div>
