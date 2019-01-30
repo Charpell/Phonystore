@@ -4,6 +4,7 @@ import CartColumns from './CartColumns';
 import EmptyCart from './EmptyCart';
 import CartList from './CartList';
 import { ProductConsumer } from '../context';
+import CartTotals from './CartTotals';
 
 class Cart extends Component {
   state = {  }
@@ -20,6 +21,7 @@ class Cart extends Component {
                   <Title name="your" title="cart" />
                   <CartColumns />
                   <CartList value={value} />
+                  <CartTotals value={value} />
                 </Fragment>
               );
             } else {
